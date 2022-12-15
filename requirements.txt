@@ -14,3 +14,4 @@ python-dotenv==0.21.0
 SQLAlchemy==1.4.45
 Werkzeug==2.2.2
 zipp==3.11.0
+gunicorn
