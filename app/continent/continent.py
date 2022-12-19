@@ -5,7 +5,7 @@ continent_bp = Blueprint('continent_bp', __name__, url_prefix='/api/v1/continent
 
 @continent_bp.get('/')
 def continents_home():
-    continents = [{continent.name: continent.to_dict()} for continent in Continent.query.all()]
+    continents = [{'name': continent.name, 'details': continent.to_dict()} for continent in Continent.query.all()]
     try:
         if continents == []:
                 abort(404, description='No continent added yet.')
@@ -21,7 +21,7 @@ def get_continent(name):
     continent = Continent.query.filter_by(name=name.capitalize()).first()
     try:
         return jsonify({
-            'data': {continent.name: continent.to_dict()}
+            'data': {'name': continent.name, 'details': continent.to_dict()}
         })
     except AttributeError:
         abort(404, description=f"'{name}' not found. Check the spelling")
