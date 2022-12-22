@@ -1,4 +1,4 @@
-# Flask-RESTful API project template
+# Countries API
 
 This project is a simple API that provides information about the continents and the countries in the world.
 It uses the flask factory method and the Blueprints design.
